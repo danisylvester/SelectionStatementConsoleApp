@@ -6,27 +6,32 @@ namespace SelectionStatements
     {
         static void Main(string[] args)
         {
+            // User guessing favorite number
             var r = new Random();
             var favNum = r.Next(1, 1000);
+            bool rightAnswer = false;
 
-            Console.WriteLine("Guess my favorite number.");
-            var userInput = int.Parse(Console.ReadLine());
+            do
+            {
+                Console.WriteLine("Guess my favorite number.");
+                int userInput = int.Parse(Console.ReadLine());
 
-            if(userInput == favNum)
-            {
-                Console.WriteLine("You got it!");
-                Console.WriteLine($"My favorite number is {favNum}.");
-            }
-            else if(userInput < favNum)
-            {
-                Console.WriteLine("Your guess is too low.");
-                Console.WriteLine($"My favorite number is {favNum}.");
-            }
-            else
-            {
-                Console.WriteLine("Your guess is too high.");
-                Console.WriteLine($"My favorite number is {favNum}.");
-            }
+                if (userInput < favNum)
+                {
+                    Console.WriteLine("Your guess is too low.");
+                }
+                else if (userInput > favNum)
+                {
+                    Console.WriteLine("Your guess is too high.");
+                }
+                else
+                {
+                    Console.WriteLine($"Correct! My favorite number is {favNum}");
+                    rightAnswer = true;
+                }
+            } while (rightAnswer == false);
+
+
         }
     }
 }
