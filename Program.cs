@@ -10,19 +10,24 @@ namespace SelectionStatements
             var r = new Random();
             var favNum = r.Next(1, 1000);
             bool rightAnswer = false;
-            /*
+            string[] tooHigh = { "Yo, that's too high", "Too high!", "Ahh, that's too high", "Too high my friend!"};
+            string[] tooLow = { "Yo, that's too low", "Too low!", "Ahh, that's too low", "Too low my friend!"};
+
             do
             {
+                Console.WriteLine("............................");
                 Console.WriteLine("Guess my favorite number.");
                 int userInput = int.Parse(Console.ReadLine());
 
                 if (userInput < favNum)
                 {
-                    Console.WriteLine("Your guess is too low.");
+                    int x = r.Next(tooLow.Length);
+                    Console.WriteLine(tooLow[x]);
                 }
                 else if (userInput > favNum)
                 {
-                    Console.WriteLine("Your guess is too high.");
+                    int y = r.Next(tooHigh.Length);
+                    Console.WriteLine(tooHigh[y]);
                 }
                 else
                 {
@@ -30,7 +35,7 @@ namespace SelectionStatements
                     rightAnswer = true;
                 }
             } while (rightAnswer == false);
-            */
+            
 
             // Printing statement based on favorite school subject
             Console.WriteLine("Enter the number beside your favorite school subject!");
